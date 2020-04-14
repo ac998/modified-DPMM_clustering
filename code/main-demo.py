@@ -1,11 +1,15 @@
 import numpy as np
+import os
 import matplotlib.pyplot as plt
 from cluster_init_revised_sampling import modified_dpmm
 import time
 
 
 setNum = 2 # set number
-raw_data = np.loadtxt('newSet%d.csv' % setNum, usecols=(0,1)) # load dataset
+parent_folder = os.path.dirname(os.getcwd())
+data_folder_path = os.path.join(parent_folder, 'data', '2d_points')
+data_file = os.path.join(data_folder_path, 'newSet%d.csv' % setNum)
+raw_data = np.loadtxt(data_file, usecols=(0,1)) # load dataset
 
 #raw_data = np.loadtxt('T15_track_obs.txt', usecols=(1,2,3,4))
 M = raw_data.shape[0] # number of points
@@ -21,9 +25,9 @@ r = 20 # learning rate
 #print(raw_data.shape)
 fig = plt.figure(figsize = (8.0, 8.0))
 plt.plot(raw_data[:,0], raw_data[:,1], 'k.')
-plt.title("Unclustered points")
-plt.show()
-
+#plt.title("Unclustered points")
+#plt.show()
+plt.savefig('Unclustered points.png')
 
 # add index and initial label 
 idx = np.arange(M, dtype=np.int16)
@@ -56,9 +60,10 @@ for i,c in enumerate(result.cluster_labels):
     
 cx, cy = result.cluster_centres[:,0].astype(int), result.cluster_centres[:,1].astype(int)
 plt.scatter(cx, cy, marker='x', color='k')
-plt.title("Stage 1")
+#plt.title("Stage 1")
 #print("stage 1 : ",(t1 - t0)*10**6)
-plt.show()
+#plt.show()
+plt.savefig('After stage 1.png')
 
 # stage 2 - pre convergence 
 t0 = time.time()
@@ -74,14 +79,15 @@ for i,c in enumerate(result.cluster_labels):
     plt.scatter(points[:,1], points[:,2], marker = '.', color=Colors[i])
     
 cx, cy = result.cluster_centres[:,0].astype(int), result.cluster_centres[:,1].astype(int)
-plt.title("Before convergence of stage 2")
+#plt.title("Before convergence of stage 2")
 plt.scatter(cx, cy, marker='x', color='k')
-plt.show()
+#plt.show()
+plt.savefig('Before convergence - stage 2.png')
 
 # stage 2 - convergence 
 # numIter = 10 # max no of iterations to converge
 t0 = time.time()
-result = clustering.assign_labels(label_ids=result.cluster_labels, prev_counts = result.cluster_counts, prev_centres = result.cluster_centres, converge=True, maxIter=10)
+result = clustering.assign_labels(label_ids=result.cluster_labels, prev_counts = result.cluster_counts, prev_centres = result.cluster_centres, converge=True, numIter=10)
 
 t1 = time.time()
 total_t += (t1 - t0)
@@ -96,7 +102,9 @@ for i,c in enumerate(result.cluster_labels):
     
 cx, cy = result.cluster_centres[:,0].astype(int), result.cluster_centres[:,1].astype(int)
 plt.scatter(cx, cy, marker='x', color='k')
-plt.title("After convergence of stage 2")
-plt.show()
+#plt.title("After convergence of stage 2")
+#plt.show()
+plt.savefig('After convergence - stage 2.png')
+
 
 print("Total time (in ms) = ", total_t * 1000)
