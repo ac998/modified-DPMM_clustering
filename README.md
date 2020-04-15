@@ -12,3 +12,7 @@ Cython code requires a C compiler to be present in the system (gcc by default). 
 For Linux users, simply run `pip install cython` or `conda install -c anaconda cython` if you prefer using the Anaconda environment.  
 For Windows users, please follow [this](https://github.com/cython/cython/wiki/InstallingOnWindows) or [this](https://stackoverflow.com/questions/52864588/how-to-install-cython-an-anaconda-64-bits-with-windows-10) for a step by step guide to installation.
 
+## To do
+- Add a folder for references to other works.
+- Acknowledgments
+- References for datasets
