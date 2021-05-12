@@ -16,3 +16,4 @@ For Windows users, please follow [this](https://github.com/cython/cython/wiki/In
 - Add a folder for references to other works.
 - Acknowledgments
 - References for datasets
+- Comparison with other clustering algorithms
