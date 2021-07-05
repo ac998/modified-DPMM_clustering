@@ -17,6 +17,7 @@ For Windows users, please follow [this](https://github.com/cython/cython/wiki/In
 @article{KUMARAN2019211,
 title = {Likelihood learning in modified Dirichlet Process Mixture Model for video analysis},
 journal = {Pattern Recognition Letters},
+author = {Santhosh, K. K. and Chakravarty, A. and Dogra, D. P. and Roy, P. P.}
 volume = {128},
 pages = {211-219},
 year = {2019},
