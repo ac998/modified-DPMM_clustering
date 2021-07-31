@@ -15,12 +15,12 @@ For Windows users, please follow [this](https://github.com/cython/cython/wiki/In
 
 ## Citation
 @article{KUMARAN2019211,
-title = {Likelihood learning in modified Dirichlet Process Mixture Model for video analysis},
-journal = {Pattern Recognition Letters},
-author = {Santhosh, K. K. and Chakravarty, A. and Dogra, D. P. and Roy, P. P.}
-volume = {128},
-pages = {211-219},
-year = {2019},
-issn = {0167-8655},
-doi = {https://doi.org/10.1016/j.patrec.2019.09.005},
+title = {Likelihood learning in modified Dirichlet Process Mixture Model for video analysis},  
+journal = {Pattern Recognition Letters},  
+author = {Santhosh, K. K. and Chakravarty, A. and Dogra, D. P. and Roy, P. P.}  
+volume = {128},  
+pages = {211-219},  
+year = {2019},  
+issn = {0167-8655},  
+doi = [https://doi.org/10.1016/j.patrec.2019.09.005](https://doi.org/10.1016/j.patrec.2019.09.005),  
 }
